@@ -56,7 +56,7 @@ fairseq-train /content/fairseq/data-bin/iwslt14.tokenized.de-en \
     --max-target-positions 1024
 ```
 
-# Testing:
+# Testing / Evaluation:
 
 ```bash
 fairseq-generate \
