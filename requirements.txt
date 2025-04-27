@@ -1,8 +1,0 @@
-python3.10-distutils
-setuptools==65.5.0
-pip==23.0.1
-PyYAML
-sacremoses
-subword-nmt
-sacrebleu
-tensorboardX
