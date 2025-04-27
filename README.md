@@ -44,7 +44,7 @@ fairseq-preprocess --source-lang de --target-lang en \
 # Training:
 
 ```bash
-!fairseq-train /content/fairseq/data-bin/iwslt14.tokenized.de-en \
+fairseq-train /content/fairseq/data-bin/iwslt14.tokenized.de-en \
     --arch transformer_wait_info_arch \
     --optimizer adam \
     --lr 0.001 \
@@ -54,4 +54,16 @@ fairseq-preprocess --source-lang de --target-lang en \
     --max-epoch 50 \
     --max-source-positions 1024 \
     --max-target-positions 1024
+```
+
+# Testing:
+
+```bash
+fairseq-generate \
+    data-bin/iwslt14.tokenized.de-en \
+    --path checkpoints/transformer_wait_info/checkpoint_best.pt \
+    --batch-size 128 \
+    --beam 5 \
+    --remove-bpe \
+    --user-dir /content/fairseq/fairseq/models
 ```
